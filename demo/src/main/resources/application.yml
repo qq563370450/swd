@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost/mr_cdapp
+    username: root
+    password: 123456
+  http:
+    encoding:
+      charset: utf-8
+#  resources:
+#    static-locations: classpath:/static/
+
+mybatis:
+    mapperLocations: mapper/*.xml
