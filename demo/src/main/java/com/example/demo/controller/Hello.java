@@ -26,4 +26,10 @@ public class Hello {
         return userService.select();
     }
 
+    @GetMapping("qqq")
+    public Object qqq(){
+        return userService.qqq();
+    }
+
+
 }

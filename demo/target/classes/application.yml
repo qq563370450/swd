@@ -4,11 +4,38 @@ spring:
     url: jdbc:mysql://localhost/mr_cdapp
     username: root
     password: 123456
+    tomcat:
+      max-wait: 10000
+      max-active: 30
+      test-on-borrow: true
+      initial-size: 5
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
   http:
     encoding:
       charset: utf-8
-#  resources:
-#    static-locations: classpath:/static/
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+    timeout: 5000
 
 mybatis:
-    mapperLocations: mapper/*.xml
+    mapperLocations: classpath:mapper/*.xml
+    check-config-location: true
+logging:
+  level:
+    com.example.demo.mapper: debug
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql

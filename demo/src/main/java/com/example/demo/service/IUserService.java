@@ -7,4 +7,6 @@ public interface IUserService {
 
     void insert();
 
+    Object qqq();
+
 }
