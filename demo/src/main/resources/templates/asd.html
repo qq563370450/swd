@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+</head>
+<body>
+    <form id="user" th:action="@{/helloController/asd}" th:object="${user}" th:method="post" action="asd.html">
+        <input type="text" name="name" >
+        <input type="submit" value="确定">
+    </form>
+</body>
+</html>

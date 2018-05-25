@@ -26,8 +26,8 @@ public class ShiroConfig {
     public ShiroFilterFactoryBean shiroFilterFactoryBean() {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager(securityManager());
-        shiroFilterFactoryBean.setLoginUrl("/login.html");//不设置默认找web工程根目录下的login.jsp页面
-        shiroFilterFactoryBean.setSuccessUrl("/index");//登录成功之后要跳转的连接
+        shiroFilterFactoryBean.setLoginUrl("login.html");//不设置默认找web工程根目录下的login.jsp页面
+//        shiroFilterFactoryBean.setSuccessUrl("/index");//登录成功之后要跳转的连接
         shiroFilterFactoryBean.setUnauthorizedUrl("/403");//未授权跳转页面
     /* //自定义拦截器 , 多个filter的设置 */
 //    Map<String, Filter> filters = new LinkedHashMap<>();
@@ -37,10 +37,10 @@ public class ShiroConfig {
 //    shiroFilterFactoryBean.setFilters(filters);
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
         //filterChainDefinitionManager必须是LinkedHashMap因为它必须保证有序
-
+        filterChainDefinitionMap.put("/", "authc");
 //        filterChainDefinitionMap.put("/asd", "authc");
-        filterChainDefinitionMap.put("/login.html","anon");
-        filterChainDefinitionMap.put("/index.html","authc");
+//        filterChainDefinitionMap.put("/login.html","anon");
+//        filterChainDefinitionMap.put("/index.html","authc");
 //        filterChainDefinitionMap.put("/**", "authc");//需要登录访问的资源 , 一般将/**放在最下边
 
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);

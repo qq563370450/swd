@@ -27,13 +27,19 @@ spring:
         max-idle: 8
         min-idle: 0
     timeout: 5000
+  thymeleaf:
+    mode: HTML5
+    encoding: UTF-8
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
 
 mybatis:
     mapperLocations: classpath:mapper/*.xml
     check-config-location: true
 logging:
   level:
-    com.example.demo.mapper: debug
+    com.example.demo: debug
 pagehelper:
     helperDialect: mysql
     reasonable: true

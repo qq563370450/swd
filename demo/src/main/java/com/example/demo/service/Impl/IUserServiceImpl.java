@@ -25,8 +25,9 @@ public class IUserServiceImpl implements IUserService{
 
     @Override
     public Object select() {
-        PageHelper.startPage(1,1);
+//        PageHelper.startPage(1,1);
         List<AppUser> appUsers = appUserMapper.selectByExample(new AppUserExample());
+//        AppUser appUser = appUserMapper.selectByPrimaryKey(23);
         return appUsers;
     }
 
@@ -39,7 +40,8 @@ public class IUserServiceImpl implements IUserService{
     }
 
     @Override
-    public Object qqq() {
+    public Object qqq(AppUser user) {
+
         Object id = redisService.get("id");
         return id;
     }
